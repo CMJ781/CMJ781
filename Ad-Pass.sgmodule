@@ -1,0 +1,9 @@
+#!name=Ad-Pass 规则
+#!desc=放行部分 NobyDa 复写规则内容
+
+[Rule]
+
+[URL Rewrite]
+
+[MITM]
+hostname = %INSERT% -newclient.map.baidu.com
