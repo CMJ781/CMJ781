@@ -1,0 +1,119 @@
+# Ad-Pass
+DOMAIN-SUFFIX,cc.m.jd.com
+DOMAIN-SUFFIX,cnzz.com
+DOMAIN-SUFFIX,hm.baidu.com
+DOMAIN-SUFFIX,pingma.qq.com
+DOMAIN-SUFFIX,rm.sina.com.cn
+DOMAIN-SUFFIX,gg.caixin.com
+DOMAIN-SUFFIX,yes1.feng.com
+
+
+# DIRECT
+DOMAIN,dfzq.con.cn
+DOMAIN-SUFFIX,115.com
+DOMAIN-SUFFIX,api.map.baidu.com
+DOMAIN-SUFFIX,ccb.com
+DOMAIN-SUFFIX,ccb.com.cn
+DOMAIN-SUFFIX,cc.m.jd.com
+DOMAIN-SUFFIX,dongaocloud.com
+DOMAIN-SUFFIX,ebank.spdb.com.cn
+DOMAIN-SUFFIX,gate.hockeyapp.net
+DOMAIN-SUFFIX,jianguoyun.com
+DOMAIN-SUFFIX,qiushibaike.com
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,restapi.amap.com
+DOMAIN-SUFFIX,tuniu.com
+DOMAIN-SUFFIX,tuniucdn.com
+DOMAIN-SUFFIX,wifiwx.com
+DOMAIN-SUFFIX,wxbus.com.cn
+DOMAIN-SUFFIX,*zhuanche.com
+DOMAIN-SUFFIX,zsxq.com
+
+DOMAIN-KEYWORD,*bank*
+DOMAIN-KEYWORD,citimobile
+DOMAIN-KEYWORD,cmbchina
+DOMAIN-KEYWORD,CMJ781*
+DOMAIN-KEYWORD,flyertea
+DOMAIN-KEYWORD,irobot*
+DOMAIN-KEYWORD,htsec
+DOMAIN-KEYWORD,seeyon
+
+USER-AGENT,%E4%B8%9C%E6%96%B9*
+USER-AGENT,%E5%9D%9A%E6%9E%9C*
+USER-AGENT,%E6%97%A0%E9%94%A1*
+USER-AGENT,%E7%9F%A5%E8%AF%86*
+USER-AGENT,%E7%BA%BD%E7%BA%A*
+USER-AGENT,%E8%BD%AF%E4%BB%B6*
+USER-AGENT,Caixin*
+USER-AGENT,Drive*
+USER-AGENT,DS*
+USER-AGENT,GuoBinTeam*
+USER-AGENT,NutstireApp*
+USER-AGENT,OneTravel*
+USER-AGENT,PNCBank*
+USER-AGENT,wxbus*
+USER-AGENT,xiaomiquan*
+
+IP-CIDR,61.177.196.114/32,no-resolve
+IP-CIDR,58.221.171.162/32,no-resolve
+
+IP-CIDR,101.6.6.6/32,no-resolve
+IP-CIDR,119.28.28.28/32,no-resolve
+IP-CIDR,119.29.29.29/32,no-resolve
+IP-CIDR,223.5.5.5/32,no-resolve
+IP-CIDR,223.6.6.6/32,no-resolve
+IP-CIDR,180.76.76.76/32,no-resolve
+
+# Router
+DOMAIN-SUFFIX,hiwifi.com
+DOMAIN-SUFFIX,leike.cc
+DOMAIN-SUFFIX,miwifi.com
+DOMAIN-SUFFIX,my.router
+DOMAIN-SUFFIX,p.to
+DOMAIN-SUFFIX,peiluyou.com
+DOMAIN-SUFFIX,phicomm.me
+DOMAIN-SUFFIX,routerlogin.com
+DOMAIN-SUFFIX,tendawifi.com
+DOMAIN-SUFFIX,zte.home
+DOMAIN,router.asus.com
+
+# Special
+# > General
+USER-AGENT,coffeecorp*
+USER-AGENT,restaurant-mobile*
+DOMAIN,app.adjust.com
+# > Google
+DOMAIN-SUFFIX,googletraveladservices.com
+DOMAIN,dl.google.com
+DOMAIN,mtalk.google.com
+# > Tencent
+DOMAIN,livew.l.qq.com
+DOMAIN,vd.l.qq.com
+# > Strava
+DOMAIN,analytics.strava.com
+# > Umeng
+DOMAIN,msg.umeng.com
+DOMAIN,msg.umengcloud.com
+
+# > Download
+PROCESS-NAME,aria2c
+PROCESS-NAME,fdm
+PROCESS-NAME,Folx
+PROCESS-NAME,NetTransport
+PROCESS-NAME,Thunder
+PROCESS-NAME,Transmission
+PROCESS-NAME,uTorrent
+PROCESS-NAME,WebTorrent
+PROCESS-NAME,WebTorrent Helper
+# > bt
+DOMAIN-KEYWORD,announce
+DOMAIN-KEYWORD,torrent
+DOMAIN-KEYWORD,tracker
+DOMAIN-SUFFIX,smtp
+DOMAIN-KEYWORD,aria2
+URL-REGEX,(Subject|HELO|SMTP)
+# > 迅雷
+URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
+DOMAIN-SUFFIX,xunlei.com
+# > 百度
+URL-REGEX,(api|ps|sv|offnavi|newvector|ulog\.imap|newloc)(\.map|)\.(baidu|n\.shifen)\.com
