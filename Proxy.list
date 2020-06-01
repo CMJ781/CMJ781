@@ -1,0 +1,43 @@
+# Proxy
+DOMAIN,api-h2.tiktokv.com
+DOMAIN,api2-16-h2.musical.ly
+
+DOMAIN-SUFFIX,accuweather.com
+DOMAIN-SUFFIX,e.t9k.space
+DOMAIN-SUFFIX,ecs.console.aliyun.com
+DOMAIN-SUFFIX,freedl.org
+DOMAIN-SUFFIX,ipip.net
+DOMAIN-SUFFIX,kidsa-z.com
+DOMAIN-SUFFIX,masuit.com
+DOMAIN-SUFFIX,quickconnect.to
+DOMAIN-SUFFIX,starfall.com
+DOMAIN-SUFFIX,update.sony.net
+DOMAIN-SUFFIX,weatherlive.info
+DOMAIN-SUFFIX,workflow.is
+
+DOMAIN-KEYWORD,mp43
+DOMAIN-KEYWORD,rixcloud
+
+USER-AGENT,bose*
+USER-AGENT,MKPlayer*
+
+IP-CIDR,45.116.152.0/22,no-resolve
+
+# MAC OS
+PROCESS-NAME,Backup and Sync
+PROCESS-NAME,Day One
+PROCESS-NAME,Resilio Sync
+PROCESS-NAME,Slack
+
+# XXX
+DOMAIN-SUFFIX,91porn.com
+DOMAIN-SUFFIX,chaturbate.com
+DOMAIN-SUFFIX,jav101.com
+DOMAIN-SUFFIX,kdw019.com
+DOMAIN-SUFFIX,tp.m-team.cc
+DOMAIN-SUFFIX,sejie3.us
+DOMAIN-SUFFIX,sexinsex.net
+DOMAIN-SUFFIX,t66y.com
+DOMAIN-SUFFIX,thisav.com
+DOMAIN-SUFFIX,vido.ws
+DOMAIN-SUFFIX,xvideos.com
