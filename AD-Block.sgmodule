@@ -1,0 +1,6 @@
+#!name=AD-Block
+#!desc=拦截广告以及隐私追踪，屏蔽部分运营商劫持网页弹出流量统计
+[Rule]
+DOMAIN-SET,https://raw.githubusercontent.com/NobyDa/ND-AD/master/Surge/AD_Block.txt,REJECT
+DOMAIN-SET,https://raw.githubusercontent.com/NobyDa/ND-AD/master/Surge/AD_Block_Plus.txt,REJECT
+DOMAIN-SET,https://raw.githubusercontent.com/NobyDa/ND-AD/master/Surge/AD_Block_Add.txt,REJECT
