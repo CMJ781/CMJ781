@@ -57,9 +57,9 @@ DOMAIN-SUFFIX,ctyunapi.cn,REJECT-TINYGIF
 DOMAIN-SUFFIX,convection.cn,REJECT-TINYGIF
 
 # 哔哩哔哩去广告
+DOMAIN,data.bilibili.com,REJECT-TINYGIF
 URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT-TINYGIF
-URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,,REJECT-TINYGIF
-AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))),(NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT-TINYGIF
+URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT-TINYGIF
 
 # 知乎去广告
 USER-AGENT,AVOS*,REJECT-TINYGIF
