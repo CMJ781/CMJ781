@@ -62,10 +62,10 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT-TINYGIF
 
 # 知乎去广告
+DOMAIN,118.89.204.198,REJECT-TINYGIF
 USER-AGENT,AVOS*,REJECT-TINYGIF
-URL-REGEX,https://www.zhihu.com/api/v4/mcn/,REJECT
-URL-REGEX,https://api.zhihu.com/(ab|adx|xen|club|fringe|zst|commercial|ad-style-service|market/popover|search/(top|tab|preset)|.*(guide|recommendations|extended|featured-comment-ad)),REJECT
-AND,((USER-AGENT,osee2*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT-TINYGIF
+URL-REGEX,https://api.zhihu.com/(ad|drama|fringe|commercial|market/popover|search/(top|preset|tab)|.*featured-comment-ad),REJECT-TINYGIF
+AND,((USER-AGENT,ZhihuHybrid*), (URL-REGEX,.*recommend)),REJECT-TINYGIF
 
 # 知乎去“圈子”
 URL-REGEX,https://www.zhihu.com/api/v4/clubs/answers/\d+/bind_club,REJECT-TINYGIF
@@ -99,6 +99,7 @@ zhihu people = type=http-response,requires-body=1,max-size=0,pattern=https://api
 zhihu feed = type=http-response,requires-body=1,max-size=0,pattern=https://api.zhihu.com/moments/recommend,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js
 zhihu recommend = type=http-response,requires-body=1,max-size=0,pattern=https://api.zhihu.com/topstory/recommend,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20recommend.js
 zhihu answer = type=http-response,requires-body=1,max-size=0,pattern=https://api.zhihu.com/v4/questions,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20answer.js
+zhihu link = type=http-request,pattern=https?://link.zhihu.com/\?target=,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20link.js
 
 # 抖音去广告
 douyin_post = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme/v1/aweme\/post\/,requires-body=1,maxsize=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
@@ -326,4 +327,4 @@ app_name=news_article&([\S]*)aid=\d+ app_name=news_article_social&$1aid=19 heade
 ^https?://zhidao\.baidu\.com header-replace User-Agent Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.2 Safari/605.1.15
 
 [MITM]
-hostname = %APPEND% *.amemv.com, api.bilibili.com, api.live.bilibili.com, app.bilibili.com, www.bilibili.com, duckduckgo.com, api.m.jd.com, sp.kaola.com, geolite.maxmind.com, ios.prod.ftl.netflix.com, i.weread.qq.com, mp.weixin.qq.com, r.inews.qq.com, api.rr.tv, api.smzdm.com, app-api.smzdm.com, aweme.snssdk.com, *.snssdk.com, amdc.m.taobao.com, trade-acs.m.taobao.com, api.unlimapps.com, *.uve.weibo.com, api.weibo.cn, mapi.weibo.com, storage.wax.weibo.com, weibointl.api.weibo.cn, api.zhihu.com, www.zhihu.com
+hostname = %APPEND% *.amemv.com, api.bilibili.com, api.live.bilibili.com, app.bilibili.com, www.bilibili.com, duckduckgo.com, api.m.jd.com, sp.kaola.com, geolite.maxmind.com, ios.prod.ftl.netflix.com, i.weread.qq.com, mp.weixin.qq.com, r.inews.qq.com, api.rr.tv, api.smzdm.com, app-api.smzdm.com, aweme.snssdk.com, *.snssdk.com, amdc.m.taobao.com, trade-acs.m.taobao.com, api.unlimapps.com, *.uve.weibo.com, api.weibo.cn, mapi.weibo.com, storage.wax.weibo.com, weibointl.api.weibo.cn, api.zhihu.com, link.zhihu.com, www.zhihu.com, 118.89.204.198
