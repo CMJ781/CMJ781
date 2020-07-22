@@ -1,5 +1,5 @@
 #!name=CMJ781-Rewrite
-#!desc=CMJ781-Rewrite
+#!desc=京东&淘宝比价,Netflix评分,更改搜索
 
 [General]
 [Host]
@@ -29,24 +29,24 @@ cdn.pcbeta.static.inimc.com = 120.52.19.113
 *.bilibili.com = server:119.28.28.28
 *.hdslb.com = server:119.28.28.28
 
-*.aaplimg.com = server:1.1.1.1
-*.apple.co = server:1.1.1.1
-*.apple.com = server:1.1.1.1
-*.apple.com.cn = server:1.1.1.1
-*.apple-cloudkit.com = server:1.1.1.1
-*.apple-dns.net = server:1.1.1.1
-*.appstore.com = server:1.1.1.1
-*.cdn-apple.com = server:1.1.1.1
-*.crashlytics.com = server:1.1.1.1
-*.icloud.com = server:1.1.1.1
-*.icloud-content.com = server:1.1.1.1
-*.me.com = server:1.1.1.1
-*.mzstatic.com = server:1.1.1.1
-*.itunes.apple.com = server:1.1.1.1
-*.akadns.net = server:1.1.1.1
+*.aaplimg.com = server:8.8.4.4
+*.apple.co = server:8.8.4.4
+*.apple.com = server:8.8.4.4
+*.apple.com.cn = server:8.8.4.4
+*.apple-cloudkit.com = server:8.8.4.4
+*.apple-dns.net = server:8.8.4.4
+*.appstore.com = server:8.8.4.4
+*.cdn-apple.com = server:8.8.4.4
+*.crashlytics.com = server:8.8.4.4
+*.icloud.com = server:8.8.4.4
+*.icloud-content.com = server:8.8.4.4
+*.me.com = server:8.8.4.4
+*.mzstatic.com = server:8.8.4.4
+*.itunes.apple.com = server:8.8.4.4
+*.akadns.net = server:8.8.4.4
 
-*.kingkong.com.tw = server:1.1.1.1
-*github* = server:1.1.1.1
+*.kingkong.com.tw = server:8.8.4.4
+*github* = server:8.8.4.4
 
 [Rule]
 
@@ -58,10 +58,10 @@ http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness
 http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
 http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
 
-# Netflix电影评分
+# Netflix 电影评分
 http-request ^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
 http-response ^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
-http-response ^https?://ios\.prod\.ftl\.netflix\.com/iosui/warmer/.+type=show-ath requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating_season.js
+nf_rating_season.js = type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating_season.js
 
 # 京东去开屏广告
 http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(start|myOrderInfo|orderTrackBusiness) requires-body=1,script-path=https://raw.githubusercontent.com/primovist/ScriptsForSurge/master/Scripts/JDAdRemove.js
@@ -72,7 +72,7 @@ http-response ^https?:\/\/(h(aojia|omepage)|(articl|baik)e|s)-api\.smzdm\.com\/(
 [URL Rewrite]
 
 # Q-Search
-#ggtp   (Google图片)
+#ggtp   (Google 图片)
 ^https:\/\/duckduckgo.com\/\?q=ggtp\+([^&]+).+ https://www.google.com/search?&tbm=isch&q=$1 302
 # git   (GitHub)
 ^https:\/\/duckduckgo.com\/\?q=git\+([^&]+).+ https://github.com/search?q=$1 302
@@ -118,7 +118,7 @@ http-response ^https?:\/\/(h(aojia|omepage)|(articl|baik)e|s)-api\.smzdm\.com\/(
 ^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302
 # ddg: DuckDuckGo 
 ^https:\/\/duckduckgo.com\/\?q=ddg\+([^&]+).+ https://duckduckgo.com/?ia=about&q=$1 302
-# 无指令: 谷歌
+# 无指令：谷歌
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?q=$1 302
 
 # 更新 GeoIP2
@@ -133,10 +133,6 @@ http-response ^https?:\/\/(h(aojia|omepage)|(articl|baik)e|s)-api\.smzdm\.com\/(
 ^https?://zh.(m.)?wikipedia.org/zh-[a-zA-Z]{2,} http://www.wikiwand.com/zh-hant 302
 
 [Header Rewrite]
-# 知乎
-^https?://www.zhihu.com/question/ header-replace User-Agent Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.45 Safari/537.36
-# 百度知道
-^https?://zhidao\.baidu\.com header-replace User-Agent Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.2 Safari/605.1.15
 
 [MITM]
-hostname = %APPEND% duckduckgo.com, api.m.jd.com, ios.prod.ftl.netflix.com, i.weread.qq.com, api.smzdm.com, app-api.smzdm.com, amdc.m.taobao.com, trade-acs.m.taobao.com
+hostname = %APPEND% trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com, api.smzdm.com, app-api.smzdm.com, geolite.maxmind.com
