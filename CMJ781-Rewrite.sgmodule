@@ -2,6 +2,7 @@
 #!desc=京东&淘宝比价,Netflix评分,更改搜索
 
 [General]
+
 [Host]
 ip6-localhost = ::1
 ip6-loopback = ::1
@@ -51,6 +52,7 @@ cdn.pcbeta.static.inimc.com = 120.52.19.113
 [Rule]
 
 [Script]
+
 # 京东历史价格
 http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
 
