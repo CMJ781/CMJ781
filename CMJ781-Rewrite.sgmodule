@@ -7,44 +7,48 @@
 ip6-localhost = ::1
 ip6-loopback = ::1
 localhost = 127.0.0.1
-*.taobao.com = server:https://dns.alidns.com/dns-query
-*.tmall.com = server:https://dns.alidns.com/dns-query
-*.jd.com = server:https://doh.pub/dns-query
-*.qq.com = server:https://doh.pub/dns-query
-*.tencent.com = server:https://doh.pub/dns-query
-*.alicdn.com = server:https://dns.alidns.com/dns-query
-*.aliyun.com = server:https://dns.alidns.com/dns-query
-*.weixin.com = server:https://doh.pub/dns-query
-*.163.com = server:https://doh.pub/dns-query
-*.126.com = server:https://doh.pub/dns-query
-*.126.net = server:https://doh.pub/dns-query
-*.127.net = server:https://doh.pub/dns-query
-*.netease.com = server:https://doh.pub/dns-query
-*.mi.com = server:https://doh.pub/dns-query
-*.xiaomi.com = server:https://doh.pub/dns-query
-*.bilibili.com = server:https://doh.pub/dns-query
-*.hdslb.com = server:https://doh.pub/dns-query
-*.bilibili.com = server:https://doh.pub/dns-query
-*.hdslb.com = server:https://doh.pub/dns-query
+*.lan = server:system
 
-*.aaplimg.com = server:https://dns.google/dns-query
-*.apple.co = server:https://dns.google/dns-query
-*.apple.com = server:https://dns.google/dns-query
-*.apple.com.cn = server:https://dns.google/dns-query
-*.apple-cloudkit.com = server:https://dns.google/dns-query
-*.apple-dns.net = server:https://dns.google/dns-query
-*.appstore.com = server:https://dns.google/dns-query
-*.cdn-apple.com = server:https://dns.google/dns-query
-*.crashlytics.com = server:https://dns.google/dns-query
-*.icloud.com = server:https://dns.google/dns-query
-*.icloud-content.com = server:https://dns.google/dns-query
-*.me.com = server:https://dns.google/dns-query
-*.mzstatic.com = server:https://dns.google/dns-query
-*.itunes.apple.com = server:https://dns.google/dns-query
-*.akadns.net = server:https://dns.google/dns-query
+doh.rixcloud.dev = server:119.28.28.28
+*.jd.com = server:119.28.28.28
+*.qq.com = server:119.28.28.28
+*.tencent.com = server:119.28.28.28
+*.weixin.com = server:119.28.28.28
+*.163.com = server:119.28.28.28
+*.126.com = server:119.28.28.28
+*.126.net = server:119.28.28.28
+*.127.net = server:119.28.28.28
+*.netease.com = server:119.28.28.28
+*.mi.com = server:119.28.28.28
+*.xiaomi.com = server:119.28.28.28
+*.bilibili.com = server:119.28.28.28
+*.hdslb.com = server:119.28.28.28
+*.bilibili.com = server:119.28.28.28
+*.hdslb.com = server:119.28.28.28
 
-*.kingkong.com.tw = server:https://dns.google/dns-query
-*github* = server:https://dns.google/dns-query
+*.taobao.com = server:223.6.6.6
+*.tmall.com = server:223.6.6.6
+*.alicdn.com = server:223.6.6.6
+*.aliyun.com = server:223.6.6.6
+
+*.aaplimg.com = server:8.8.4.4
+*.apple.co = server:8.8.4.4
+*.apple.com = server:8.8.4.4
+*.apple.com.cn = server:8.8.4.4
+*.apple-cloudkit.com = server:8.8.4.4
+*.apple-dns.net = server:8.8.4.4
+*.appstore.com = server:8.8.4.4
+*.cdn-apple.com = server:8.8.4.4
+*.crashlytics.com = server:8.8.4.4
+*.icloud.com = server:8.8.4.4
+*.icloud-content.com = server:8.8.4.4
+*.me.com = server:8.8.4.4
+*.mzstatic.com = server:8.8.4.4
+*.itunes.apple.com = server:8.8.4.4
+*.akadns.net = server:8.8.4.4
+
+*.kingkong.com.tw = server:8.8.4.4
+*github* = server:8.8.4.4
 
 [Rule]
 
