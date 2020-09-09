@@ -142,4 +142,4 @@ http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positiv
 [Header Rewrite]
 
 [MITM]
-hostname = %APPEND% trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com, api.smzdm.com, app-api.smzdm.com, geolite.maxmind.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com
+hostname = %APPEND% trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com, api.smzdm.com, app-api.smzdm.com, geolite.maxmind.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, github.com, raw.githubusercontent.com
