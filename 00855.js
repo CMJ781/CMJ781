@@ -158,7 +158,7 @@ function get_basic(tel) {
         remainTime = obj.dataList[2].number;
         get_detail(remainFee, remainTime, tel)
     }, reason => {
-    $notify("13093000855", tel + '登录失败', reason.error);
+    $notify("19093000855", tel + '登录失败', reason.error);
     });
 }
 
