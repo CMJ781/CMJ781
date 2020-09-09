@@ -137,7 +137,7 @@ if (isSurge) {
     }
 }
 // #endregion
-var tel = "13093077999";
+var tel = "19093077999";
 //上行引号内填入联通号码，使用前请登陆一次联通支付宝小程序
 //有问题请通过Telegram反馈 https://t.me/Leped_Bot
 var remainTime = "-";
@@ -158,7 +158,7 @@ function get_basic(tel) {
         remainTime = obj.dataList[2].number;
         get_detail(remainFee, remainTime, tel)
     }, reason => {
-    $notify("13093077999", tel + '登录失败', reason.error);
+    $notify("19093077999", tel + '登录失败', reason.error);
     });
 }
 
