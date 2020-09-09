@@ -227,9 +227,9 @@ function get_detail(remainFee, remainTime, tel) {
             else return (i / 1024).toFixed(2) + " GB";
         };
         var rFlow = setUnit(remain[2]).split(" ");
-        $notify("13093077999", "截止至 " + queryTime, "剩余语音 " + remainTime + "分" + "\n话费余额 " + remainFee + "元" + "\n流量剩余 " + rFlow[0] + rFlow[1]);
+        $notify("19093077999", "截止至 " + queryTime, "剩余语音 " + remainTime + "分" + "\n话费余额 " + remainFee + "元" + "\n流量剩余 " + rFlow[0] + rFlow[1]);
     }, reason => {
-    $notify("13093077999", tel + '登录失败', reason.error);
+    $notify("19093077999", tel + '登录失败', reason.error);
     });
 }
 
