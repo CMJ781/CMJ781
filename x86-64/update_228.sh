@@ -43,7 +43,7 @@ svn co https://github.com/siropboy/other/trunk/patch/netdata ./feeds/packages/ad
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/new/luci-app-serverchan
 svn co https://github.com/siropboy/mypackages/trunk/smartdns ./package/new/smartdns
 # svn co https://github.com/siropboy/mypackages/trunk/adguardhome ./package/new/adguardhome
-svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentomcat ./package/new/luci-theme-opentomcat
+# svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentomcat ./package/new/luci-theme-opentomcat
 # svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns ./package/new/smartdns
 # svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns ./package/new/luci-app-smartdns
 # git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/new/OpenAppFilter
