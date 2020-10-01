@@ -19,8 +19,8 @@ curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/powero
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
 sed -i 's/网络存储/存储/g' ./package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/带宽监控/监控/g' ./feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
-sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' ./package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
-# sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' ./package/lean/luci-app-sfe/po/zh-cn/sfe.po
+sed -i 's/Turbo ACC 网络加速/网络加速/g' ./package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
+# sed -i 's/Turbo ACC 网络加速/网络加速/g' ./package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' ./package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 # sed -i 's/家庭云//g' ./package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i '/filter_aaaa/d' ./package/network/services/dnsmasq/files/dhcp.conf
@@ -37,8 +37,8 @@ curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/dev-19.07/
 curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/dev-19.07/net/https-dns-proxy/files/https-dns-proxy.init > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
 echo "DISTRIB_REVISION='S$(date +%Y.%m.%d) CMJ781'" > ./package/base-files/files/etc/openwrt_release1
 svn co https://github.com/siropboy/other/trunk/patch/netdata ./feeds/packages/admin/netdata
-svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentopd ./package/lean/luci-theme-opentopd
-svn co https://github.com/siropboy/mypackages/trunk/luci-theme-argon_new ./package/lean/luci-theme-argon_new
+# svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentopd ./package/lean/luci-theme-opentopd
+# svn co https://github.com/siropboy/mypackages/trunk/luci-theme-argon ./package/lean/luci-theme-argon
 # svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/new/luci-app-jd-dailybonus
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/new/luci-app-serverchan
 svn co https://github.com/siropboy/mypackages/trunk/smartdns ./package/new/smartdns
@@ -56,9 +56,11 @@ git clone -b master --single-branch https://github.com/vernesong/OpenClash/luci-
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  ./package/new/luci-app-vssr
 svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall ./package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package ./package/lienol
-# git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/new/luci-theme-edge
-# git clone -b master --single-branch https://github.com//xiaoqingfengATGH/luci-theme-infinityfreedom package/new/luci-theme-infinityfreedom
-git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/new/luci-theme-opentomato
+# git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge .package/new/luci-theme-edge
+# git clone -b master --single-branch https://github.com//xiaoqingfengATGH/luci-theme-infinityfreedom .package/new/luci-theme-infinityfreedom
+git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato .package/new/luci-theme-opentomato
+git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomcat .package/new/luci-theme-opentomcat
+git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon .package/new/luci-theme-argon
 # git clone  https://github.com/lisaac/luci-lib-docker.git package/new/luci-lib-docker
 # git clone  https://github.com/lisaac/luci-app-dockerman.git package/new/luci-app-dockerman
 # git clone https://github.com/NateLol/luci-app-beardropper package/new/luci-app-beardropper
