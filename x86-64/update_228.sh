@@ -61,6 +61,7 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/package ./package/lien
 git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato .package/new/luci-theme-opentomato
 git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomcat .package/new/luci-theme-opentomcat
 git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon .package/new/luci-theme-argon
+svn co https://github.com/siropboy/mypackages/trunk/luci-app-advanced ./package/new/luci-app-advanced
 # git clone  https://github.com/lisaac/luci-lib-docker.git package/new/luci-lib-docker
 # git clone  https://github.com/lisaac/luci-app-dockerman.git package/new/luci-app-dockerman
 # git clone https://github.com/NateLol/luci-app-beardropper package/new/luci-app-beardropper
