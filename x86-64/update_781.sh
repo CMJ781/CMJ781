@@ -9,7 +9,7 @@
 #rm -rf ./package/lean/v2ray
 # rm -rf ./package/lean/luci-lib-docker
 rm -rf ./package/lean/luci-theme-opentomcat
-# rm -rf ./feeds/diy/adguardhome
+rm -rf ./feeds/diy/adguardhome
 rm -rf ./feeds/diy/smartdns
 rm -rf ./feeds/packages/admin/netdata
 rm -rf ./feeds/packages/net/smartdns
@@ -24,8 +24,7 @@ sed -i 's/Turbo ACC 网络加速/网络加速/g' ./package/lean/luci-app-flowoff
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' ./package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 # sed -i 's/家庭云//g' ./package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i '/filter_aaaa/d' ./package/network/services/dnsmasq/files/dhcp.conf
-# sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=$(BUILD_DATE_PREFIX)-ipv6-/g' ./include/image.mk
-sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell date +%Y%m%d)-ipv6-/g' ./include/image.mk
+sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell date +%Y%m%d)-/g' ./include/image.mk
 sed -i 's/实时流量监测/监测/g' package/lean/luci-app-wrtbwmon/po/zh-cn/wrtbwmon.po
 sed -i 's/192.168.1.1/192.168.8.250/g' ./package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/CMJ781-OpenWrt/g' ./package/base-files/files/bin/config_generate
@@ -36,17 +35,20 @@ curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocor
 curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/dev-19.07/net/https-dns-proxy/files/https-dns-proxy.config > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.config
 curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/dev-19.07/net/https-dns-proxy/files/https-dns-proxy.init > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
 echo "DISTRIB_REVISION='S$(date +%Y.%m.%d) CMJ781'" > ./package/base-files/files/etc/openwrt_release1
-svn co https://github.com/siropboy/other/trunk/patch/netdata ./feeds/packages/admin/netdata
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata/ ./feeds/packages/admin/netdata
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata/ ./package/lean/luci-app-netdata
+svn co https://github.com/siropboy/other/trunk/patch/netdata feeds/packages/admin/netdata
+svn co https://github.com/siropboy/other/trunk/patch/luci-app-netdata ./package/lean/luci-app-netdata
 # svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/new/luci-app-jd-dailybonus
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/new/luci-app-serverchan
 svn co https://github.com/siropboy/mypackages/trunk/smartdns ./package/new/smartdns
-# svn co https://github.com/siropboy/mypackages/trunk/adguardhome ./package/new/adguardhome
+svn co https://github.com/siropboy/mypackages/trunk/adguardhome ./package/new/adguardhome
 # svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns ./package/new/smartdns
 # svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns ./package/new/luci-app-smartdns
 # git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/new/OpenAppFilter
 # svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome ./package/new/AdGuardHome
 # svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
-git clone -b master --single-branch https://github.com/vernesong/OpenClash/luci-app-openclash ./package/new/luci-app-openclash
+git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 # git clone -b master --single-branch https://github.com/frainzy1477/luci-app-clash ./package/new/luci-app-clash
 # sed -i 's/), 5)/), 49)/g' ./package/new/luci-app-clash/luasrc/controller/clash.lua
 # sed -i 's/), 1)/), 49)/g' ./package/new/luci-app-clash/luasrc/controller/clash.lua
