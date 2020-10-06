@@ -41,10 +41,8 @@ sed -i 's/OpenWrt/CMJ781-OpenWrt/g' ./package/base-files/files/bin/config_genera
 curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/dev-19.07/net/https-dns-proxy/files/https-dns-proxy.config > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.config
 curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/dev-19.07/net/https-dns-proxy/files/https-dns-proxy.init > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
 echo "DISTRIB_REVISION='S$(date +%Y.%m.%d) CMJ781'" > ./package/base-files/files/etc/openwrt_release1
-# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata/ ./feeds/packages/admin/netdata
-# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata/ ./package/lean/luci-app-netdata
-svn co https://github.com/siropboy/other/trunk/patch/netdata feeds/packages/admin/netdata
-svn co https://github.com/siropboy/other/trunk/patch/luci-app-netdata ./package/lean/luci-app-netdata
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata/ ./feeds/packages/admin/netdata
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata/ ./package/lean/luci-app-netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/miniupnpd/ ./feeds/packages/net/miniupnpd
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3/ ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
@@ -69,12 +67,12 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/lienol
 # sed -i 's/"luci.fs"/"luci.sys".net/g' package/new/luci-app-beardropper/luasrc/model/cbi/beardropper/setting.lua
 # sed -i '/firewall/d' package/new/luci-app-beardropper/root/etc/uci-defaults/luci-beardropper
 # mv package/new/luci-app-beardropper/po/zh_Hans   package/new/luci-app-beardropper/po/zh-cn
-svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentopd ./package/lean/luci-theme-opentopd
+svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentopd /package/lean/luci-theme-opentopd
 # svn co https://github.com/siropboy/mypackages/trunk/luci-theme-argon_new ./package/lean/luci-theme-argon_new
 # git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon .package/new/luci-theme-argon
 # git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/new/luci-theme-edge
 # git clone -b master --single-branch https://github.com//xiaoqingfengATGH/luci-theme-infinityfreedom package/new/luci-theme-infinityfreedom
-git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato .package/new/luci-theme-opentomato
+git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/new/luci-theme-opentomato
 # git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomcat .package/new/luci-theme-opentomcat
-# svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentomcat ./package/new/luci-theme-opentomcat
+svn co https://github.com/siropboy/mypackages/trunk/luci-theme-opentomcat /package/new/luci-theme-opentomcat
 ./scripts/feeds update -i
