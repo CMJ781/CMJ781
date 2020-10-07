@@ -9,7 +9,6 @@ rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-app-netdata
 #rm -rf ./package/lean/luci-theme-opentomcat
-#rm -rf ./feeds/packages/net/miniupnpd
 rm -rf ./feeds/packages/net/mwan3
 #rm -rf ./feeds/diy/adguardhome
 rm -rf ./feeds/diy/smartdns
@@ -25,7 +24,7 @@ sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-flowofflo
 #sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 #sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
-sed -i '/filter_/d' ./package/network/services/dnsmasq/files/dhcp.conf
+sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 sed -i 's/192.168.1.1/192.168.8.250/g' ./package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/CMJ781-OpenWrt/g' ./package/base-files/files/bin/config_generate
 sed -i 's/实时流量监测/监测/g' package/lean/luci-app-wrtbwmon/po/zh-cn/wrtbwmon.po
@@ -42,6 +41,7 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata/ ./pa
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3/ ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome ./package/new/adguardhome
+curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
 #svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/new/luci-app-jd-dailybonus
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/new/luci-app-serverchan
 #git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/new/OpenAppFilter
