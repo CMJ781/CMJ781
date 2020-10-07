@@ -55,8 +55,9 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwa
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/lienol
 git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/new/luci-theme-edge
 git clone -b master --single-branch https://github.com//xiaoqingfengATGH/luci-theme-infinityfreedom package/new/luci-theme-infinityfreedom
-git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/new/luci-theme-opentomato
-git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/new/luci-theme-argon
-git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod package/new/luci-theme-btmod
+git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/new/luci-theme-opentomato package/new/luci-theme-opentomato
+git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/new/luci-theme-argon package/new/luci-theme-argon
+git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod package/new/luci-theme-btmod package/new/luci-theme-btmod
 git clone -b master --single-branch https://github.com/siropboy/mypackages/tree/master/luci-theme-argon_new package/new/luci-theme-argon_new
+git clone -b master --single-branch https://github.com/siropboy/siropboy-package/tree/main/luci-theme-opentomcat package/new/luci-theme-opentomcat
 ./scripts/feeds update -i
