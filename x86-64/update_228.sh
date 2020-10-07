@@ -3,13 +3,13 @@
 # Description: Build OpenWrt using GitHub Actions
 # Author: sirpdboy
 # https://github.com/sirpdboy/Openwrt
-rm -rf ./package/lean/luci-theme-argon
+#rm -rf ./package/lean/luci-theme-argon
 rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-app-netdata
-rm -rf ./package/lean/luci-theme-opentomcat
-rm -rf ./feeds/packages/net/miniupnpd
+#rm -rf ./package/lean/luci-theme-opentomcat
+#rm -rf ./feeds/packages/net/miniupnpd
 rm -rf ./feeds/packages/net/mwan3
 #rm -rf ./feeds/diy/adguardhome
 rm -rf ./feeds/diy/smartdns
@@ -30,7 +30,6 @@ sed -i 's/192.168.1.1/192.168.8.250/g' ./package/base-files/files/bin/config_gen
 sed -i 's/OpenWrt/CMJ781-OpenWrt/g' ./package/base-files/files/bin/config_generate
 sed -i 's/实时流量监测/监测/g' package/lean/luci-app-wrtbwmon/po/zh-cn/wrtbwmon.po
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell date +%Y%m%d)-/g' include/image.mk
-#curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/index.htm > ./package/lean/autocore/files/index.htm
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/luci-app-accesscontrol/luasrc/controller/mia.lua > ./package/lean/luci-app-accesscontrol/luasrc/controller/mia.lua
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/luci-app-accesscontrol/po/zh-cn/mia.po > ./package/lean/luci-app-accesscontrol/po/zh-cn/mia.po
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/luci-app-accesscontrol/luasrc/view/mia/mia_status.htm > ./package/lean/luci-app-accesscontrol/luasrc/view/mia/mia_status.htm
@@ -39,7 +38,7 @@ curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/dev-19.07/
 echo "DISTRIB_REVISION='S$(date +%Y.%m.%d) CMJ781'" > ./package/base-files/files/etc/openwrt_release1
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata/ ./feeds/packages/admin/netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata/ ./package/lean/luci-app-netdata
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/miniupnpd/ ./feeds/packages/net/miniupnpd
+#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/miniupnpd/ ./feeds/packages/net/miniupnpd
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3/ ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome ./package/new/adguardhome
@@ -53,11 +52,10 @@ git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/new/luci-app-vssr
 svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/lienol
-git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/new/luci-theme-edge package/new/luci-theme-edge
-git clone -b master --single-branch https://github.com//xiaoqingfengATGH/luci-theme-infinityfreedom package/new/luci-theme-infinityfreedom
-git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/new/luci-theme-opentomato package/new/luci-theme-opentomato
-git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/new/luci-theme-argon package/new/luci-theme-argon
-git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod package/new/luci-theme-btmod package/new/luci-theme-btmod
-git clone -b master --single-branch https://github.com/siropboy/mypackages/tree/master/luci-theme-argon_new package/new/luci-theme-argon_new
-git clone -b master --single-branch https://github.com/siropboy/siropboy-package/tree/main/luci-theme-opentomcat package/new/luci-theme-opentomcat
+git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/new/luci-theme-edge
+git clone -b master --single-branch https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/new/luci-theme-infinityfreedom
+git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/new/luci-theme-opentomato
+git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod package/new/luci-theme-btmod
+git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/new/luci-theme-argon
+git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomcat package/new/luci-theme-opentomcat
 ./scripts/feeds update -i
