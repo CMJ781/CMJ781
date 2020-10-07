@@ -29,7 +29,7 @@ sed -i '/filter_/d' ./package/network/services/dnsmasq/files/dhcp.conf
 sed -i 's/192.168.1.1/192.168.8.250/g' ./package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/CMJ781-OpenWrt/g' ./package/base-files/files/bin/config_generate
 sed -i 's/实时流量监测/监测/g' package/lean/luci-app-wrtbwmon/po/zh-cn/wrtbwmon.po
-sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell date +%Y%m%d)-/g' include/image.mk
+sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell date +%Y%m%d)/g' include/image.mk
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/luci-app-accesscontrol/luasrc/controller/mia.lua > ./package/lean/luci-app-accesscontrol/luasrc/controller/mia.lua
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/luci-app-accesscontrol/po/zh-cn/mia.po > ./package/lean/luci-app-accesscontrol/po/zh-cn/mia.po
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/luci-app-accesscontrol/luasrc/view/mia/mia_status.htm > ./package/lean/luci-app-accesscontrol/luasrc/view/mia/mia_status.htm
