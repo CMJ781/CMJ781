@@ -40,8 +40,8 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata/ ./pa
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/miniupnpd/ ./feeds/packages/net/miniupnpd
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3/ ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
-#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome ./package/new/adguardhome
 curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
+#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome ./package/new/adguardhome
 #svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/new/luci-app-jd-dailybonus
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/new/luci-app-serverchan
 #git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/new/OpenAppFilter
