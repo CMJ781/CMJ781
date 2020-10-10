@@ -14,7 +14,7 @@ rm -rf ./feeds/packages/net/mwan3
 rm -rf ./feeds/diy/smartdns
 rm -rf ./feeds/packages/admin/netdata
 rm -rf ./feeds/packages/net/smartdns
-#rm -rf ./package/lean/autocore
+rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
