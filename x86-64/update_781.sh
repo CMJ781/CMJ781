@@ -17,6 +17,9 @@ rm -rf ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 rm -rf ./feeds/packages/net/https-dns-proxy
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
+#修复核心及添加温度显示
+sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
@@ -70,4 +73,8 @@ git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-open
 git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod package/new/luci-theme-btmod
 git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/new/luci-theme-argon
 git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomcat package/new/luci-theme-opentomcat
+
+git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
+#cd package/diy/po2lmo
+#make && sudo make install
 ./scripts/feeds update -i
