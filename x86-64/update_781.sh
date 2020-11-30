@@ -55,7 +55,4 @@ git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod
 git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/new/luci-theme-argon
 git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomcat package/new/luci-theme-opentomcat
 
-git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
-#cd package/diy/po2lmo
-#make && sudo make install
 ./scripts/feeds update -i
