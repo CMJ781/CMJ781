@@ -46,8 +46,10 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash pack
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 #curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ package/diy/lienol
-git clone -b master https://github.com/xiaorouji/openwrt-passwall.git package/lienol
+
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/lienol/luci-app-passwall package/diy/luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/package package/diy/lienol
+
 git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/new/luci-theme-edge
 git clone -b master --single-branch https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/new/luci-theme-infinityfreedom
 git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/new/luci-theme-opentomato
