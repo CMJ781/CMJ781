@@ -9,7 +9,6 @@ ip6-loopback = ::1
 localhost = 127.0.0.1
 *.lan = server:system
 
-doh.rixcloud.dev = server:119.28.28.28
 *.jd.com = server:119.28.28.28
 *.qq.com = server:119.28.28.28
 *.tencent.com = server:119.28.28.28
@@ -51,6 +50,8 @@ doh.rixcloud.dev = server:119.28.28.28
 *github* = server:8.8.4.4
 
 [Rule]
+# 知乎直播修正
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/drama\/,DIRECT
 
 [Script]
 
@@ -73,6 +74,8 @@ http-response ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/w
 http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info) requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
 
 [URL Rewrite]
+# 知乎直播修正
+^https?:\/\/api\.zhihu\.com\/drama\/ https://api.zhihu.com/drama/ header
 
 # Q-Search
 #ggtp   (Google 图片)
