@@ -1,13 +1,2 @@
 #!name=Ad-Pass 规则
-#!desc=放行部分 NobyDa 复写规则内容
-
-[Rule]
-# 知乎直播修正
-URL-REGEX,^https?:\/\/api\.zhihu\.com\/drama\/,DIRECT
-
-[URL Rewrite]
-# 知乎直播修正
-^https?:\/\/api\.zhihu\.com\/drama\/ https://api.zhihu.com/drama/ header
-
-[MITM]
-hostname = %INSERT% -newclient.map.baidu.com
+#!desc=放行规则内容
