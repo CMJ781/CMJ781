@@ -138,4 +138,4 @@ http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positiv
 [Header Rewrite]
 
 [MITM]
-hostname = %INSERT% api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com
+hostname = %INSERT% -newclient.map.baidu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com
