@@ -36,7 +36,7 @@ sed -i 's/实时流量监测/流量/g' package/lean/luci-app-wrtbwmon/po/zh-cn/w
 
 sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 sed -i 's/192.168.1.1/192.168.8.250/g' ./package/base-files/files/bin/config_generate
-sed -i 's/OpenWrt/CMJ781-OpenWrt/g' ./package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/CMJ781/g' ./package/base-files/files/bin/config_generate
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)/g' include/image.mk
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) CMJ781'" > ./package/base-files/files/etc/openwrt_release1
