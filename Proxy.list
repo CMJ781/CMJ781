@@ -16,9 +16,11 @@ DOMAIN-SUFFIX,weatherlive.info
 DOMAIN-SUFFIX,workflow.is
 
 DOMAIN-KEYWORD,mp43
+DOMAIN-KEYWORD,emby
 
 USER-AGENT,bose*
 USER-AGENT,MKPlayer*
+USER-AGENT,Infuse*
 
 IP-CIDR,45.116.152.0/22,no-resolve
 
