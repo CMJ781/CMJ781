@@ -7,11 +7,9 @@ DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,trusteer.com
 
 DOMAIN-KEYWORD,eastwestbank
-DOMAIN-KEYWORD,emby
 DOMAIN-KEYWORD,velobank
 DOMAIN-KEYWORD,voice
 
 USER-AGENT,com.google.GVDiale*
-USER-AGENT,Infuse*
 USER-AGENT,VoiceAp*
 USER-AGENT,*WeatherFoundation*
