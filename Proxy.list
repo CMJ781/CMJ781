@@ -16,7 +16,6 @@ DOMAIN-SUFFIX,weatherlive.info
 DOMAIN-SUFFIX,workflow.is
 
 DOMAIN-KEYWORD,mp43
-DOMAIN-KEYWORD,emby
 
 USER-AGENT,bose*
 USER-AGENT,MKPlayer*
