@@ -1,5 +1,5 @@
-#!name=变更Weather中的AQI为美国标准
-#!desc=变更Weather中的AQI为美国标准 @Hackl0us
+#!name=AQI-CN To AQI-US
+#!desc=将苹果系统自带天气软件中的中国标准的AQI变更为美国标准
 #!system=ios
 
 [Script]
