@@ -1,9 +1,0 @@
-#!name=AQI-CN To AQI-US
-#!desc=变更苹果系统自带天气软件中的AQI标准为美国标准
-#!system=ios
-
-[Script]
-AQI-US = type=http-response, pattern=https://weather-data.apple.com/v1/weather/[\w-_]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+\?include=, requires-body=true, script-path=https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@master/Scripts/Surge/iOS_Weather_AQI_Standard.js, script-update-interval=86400
-
-[MITM]
-hostname = %APPEND% weather-data.apple.com
