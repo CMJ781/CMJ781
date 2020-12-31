@@ -57,6 +57,9 @@ URL-REGEX,^https?:\/\/api\.zhihu\.com\/drama\/,DIRECT
 # 变更AQI-CN为AQI-US
 http-response ^https://weather-data.apple.com/v1/weather/[\w-]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+\? requires-body=1,script-path=https://raw.githubusercontent.com/CMJ781/CMJ781/master/Weather-AQI.js
 
+# 获取多个京东cookie的脚本，不和NobyDa的京东cookie冲突，复制 https://home.m.jd.com/myJd/newhome.action 到浏览器打开
+http-request ^https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion requires-body=1,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/JD_extra_cookie.js
+
 # 京东历史价格
 http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
 
