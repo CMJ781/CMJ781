@@ -73,7 +73,7 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 
 #rm -rf package/lean/luci-app-dockerman
 #rm -rf package/lean/luci-lib-docker
-#rm -rf package/lean/luci-app-diskman
+rm -rf package/lean/luci-app-diskman
 rm -rf package/lean/parted
 
 git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/diy3/luci-theme-edge
