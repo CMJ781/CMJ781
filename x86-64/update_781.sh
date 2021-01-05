@@ -76,7 +76,7 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 rm -rf package/lean/luci-app-diskman
 rm -rf package/lean/parted
 
-#git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/diy/luci-theme-edge
+git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge package/diy3/luci-theme-edge
 #git clone -b master --single-branch https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/diy/luci-theme-infinityfreedom
 #git clone -b master --single-branch https://github.com/Leo-Jo-My/luci-theme-opentomato package/diy/luci-theme-opentomato
 #git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod package/diy/luci-theme-btmod
