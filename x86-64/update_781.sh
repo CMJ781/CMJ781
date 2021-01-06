@@ -63,6 +63,4 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 rm -rf package/lean/luci-app-diskman
 rm -rf package/lean/parted
 
-git clone -b master --single-branch https://github.com/siropboy/luci-theme-btmod package/diy/luci-theme-btmod
-
 ./scripts/feeds update -i
