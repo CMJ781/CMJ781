@@ -79,9 +79,6 @@ http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positiv
 # 知乎直播修正
 ^https?:\/\/api\.zhihu\.com\/drama\/ https://api.zhihu.com/drama/ header
 
-# GitHub CDN加速
-^(https?:\/\/(?:raw|gist)\.githubusercontent\.com\/.+)$ https://github.pengym.workers.dev/$1 302
-
 # Q-Search
 #ggtp   (Google 图片)
 ^https:\/\/duckduckgo.com\/\?q=ggtp\+([^&]+).+ https://www.google.com/search?&tbm=isch&q=$1 302
@@ -143,4 +140,4 @@ http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positiv
 [Header Rewrite]
 
 [MITM]
-hostname = %INSERT% -newclient.map.baidu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com, weather-data.apple.com, raw.githubusercontent.com, gist.githubusercontent.com
+hostname = %INSERT% -newclient.map.baidu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com, weather-data.apple.com
