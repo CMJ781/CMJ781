@@ -42,13 +42,14 @@ echo ${date1}' by CMJ781 ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
-cp -f ./package/diy/banner ./package/base-files/files/etc/
 echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/x64/config-5.4
 echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
+git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
 ./scripts/feeds update -i
