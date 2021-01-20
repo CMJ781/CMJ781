@@ -14,7 +14,7 @@ rm -rf ./feeds/packages/net/mwan3 && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 
 rm -rf ./feeds/packages/net/https-dns-proxy
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
+svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy=
 
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
