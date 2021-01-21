@@ -36,6 +36,7 @@ sed -i 's/实时流量监测/流量/g' package/lean/luci-app-wrtbwmon/po/zh-cn/w
 #sed -i's/KMS 服务器/KMS 激活/g' package/lean/luci-app-vlmcsd/po/zh-cn/vlmcsd.zh-cn.po
 #sed -i's/USB 打印服务器/打印服务/g' package/lean/luci-app-usb-printer/po/zh-cn/usb-printer.po
 sed -i 's/192.168.1.1/192.168.8.250/g' ./package/base-files/files/bin/config_generate
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 date1='Ipv6-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
