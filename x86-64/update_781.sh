@@ -63,5 +63,4 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
-rm -rf package/diy/vssr
 ./scripts/feeds update -i
