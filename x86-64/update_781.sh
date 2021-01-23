@@ -38,7 +38,7 @@ sed -i 's/实时流量监测/流量/g' package/lean/luci-app-wrtbwmon/po/zh-cn/w
 sed -i 's/192.168.1.1/192.168.8.250/g' ./package/base-files/files/bin/config_generate
 
 cp -f ./package/diy/banner ./package/base-files/files/etc/
-date1='Ipv6-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
+date1=' '`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)/g' include/image.mk
 echo "DISTRIB_REVISION='${date1} by CMJ781'" > ./package/base-files/files/etc/openwrt_release1
 echo ${date1}' by CMJ781 ' >> ./package/base-files/files/etc/banner
@@ -61,6 +61,6 @@ git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
+#svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
 ./scripts/feeds update -i
