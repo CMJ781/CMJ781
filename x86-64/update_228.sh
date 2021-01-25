@@ -43,6 +43,8 @@ sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)/g' include/im
 echo "DISTRIB_REVISION='${date1} by CMJ781'" > ./package/base-files/files/etc/openwrt_release1
 echo ${date1}' by CMJ781 ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
+rm -rf ./package/diy/luci-app-samba4
+sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 
@@ -61,6 +63,6 @@ git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
+#svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
 ./scripts/feeds update -i
