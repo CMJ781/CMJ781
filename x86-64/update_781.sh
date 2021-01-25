@@ -58,7 +58,7 @@ echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
 
-git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+#git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 #git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
