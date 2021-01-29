@@ -10,7 +10,7 @@ $tool.get('https://dict.youdao.com/infoline/style/cardList?mode=publish&client=m
     let isAM = date.getHours() < 12 ? true : false;
     let title = (isAM ? ' 上班 ' : ' 下班 ') + (isAM ? ' ☀️ ' : ' 🌙 ') + ' 钉钉打卡 ';
     let subtitle = '';
-    let content = 'dingtalk://dingtalkclient/page/link?url=https://attend.dingtalk.com/attend/index.html';
+    let content = 'dingtalk://dingtalkclient/action/switchtab?index=2&corpid=ding78171e87584518b0&appid=158';
     if (!error) {
         if (obj && obj.length > 1) {
             let yi = obj[1];
