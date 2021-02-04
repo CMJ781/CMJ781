@@ -62,5 +62,7 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
 sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
-
+#svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app-ttnode
+rm -rf package/hw/xray-core
+rm -rf package/diy1/tcping
 ./scripts/feeds update -i
