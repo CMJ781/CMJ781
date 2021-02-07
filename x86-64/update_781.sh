@@ -4,31 +4,24 @@
 rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
-rm -rf ./package/lean/ddns-scripts_aliyun
-rm -rf ./package/lean/ddns-scripts_dnspod
-
+#echo 'up ddns'
+rm -rf ./package/lean/ddns-scripts_aliyun && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ddns-scripts_aliyun./package/lean/ddns-scripts_aliyun
+rm -rf ./package/lean/ddns-scripts_dnspod  && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ddns-scripts_dnspod ./package/lean/ddns-scripts_dnspod
 echo '替换smartdns'
-rm -rf ./feeds/packages/net/smartdns&& \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
+rm -rf ./feeds/packages/net/smartdns&& svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
+rm -rf ./feeds/packages/net/mwan3 && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
+rm -rf ./feeds/packages/net/https-dns-proxy  && svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 
-rm -rf ./feeds/packages/net/mwan3 && \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
-
-rm -rf ./feeds/packages/net/https-dns-proxy
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
-
-rm -rf ./package/diy/automount
-rm -rf ./package/diy/autosamba
-rm -rf ./package/lean/luci-app-wrtbwmon
-rm -rf ./package/diy/samba4
-rm -rf ./package/diy/luci-app-samba4
+rm -rf ./package/lean/automount
+rm -rf ./package/lean/autosamba
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
 
 curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
-curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.luased -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
+curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 
+sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 #sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 #sed -i's/Turbo ACC 网络加速/网络加速 /g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
@@ -66,3 +59,6 @@ sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
 ./scripts/feeds update -i
+git clone https://github.com/openwrt-dev/po2lmo.git
+cd po2lmo
+make && sudo make install
