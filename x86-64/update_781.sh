@@ -4,9 +4,7 @@
 rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
-#echo 'up ddns'
-rm -rf ./package/lean/ddns-scripts_aliyun && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ddns-scripts_aliyun./package/lean/ddns-scripts_aliyun
-rm -rf ./package/lean/ddns-scripts_dnspod  && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ddns-scripts_dnspod ./package/lean/ddns-scripts_dnspod
+
 echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns&& svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
 rm -rf ./feeds/packages/net/mwan3 && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
@@ -22,7 +20,6 @@ curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/powero
 curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 
 sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
-#sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/Turbo ACC 网络加速/网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 #sed -i's/Turbo ACC 网络加速/网络加速 /g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
@@ -42,8 +39,6 @@ sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)/g' include/im
 echo "DISTRIB_REVISION='${date1} by CMJ781'" > ./package/base-files/files/etc/openwrt_release1
 echo ${date1}' by CMJ781 ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
-sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
-sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
@@ -55,10 +50,6 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
 sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
-#svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app-ttnode
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
 ./scripts/feeds update -i
-git clone https://github.com/openwrt-dev/po2lmo.git
-cd po2lmo
-make && sudo make install
