@@ -64,12 +64,8 @@ git clone -b master --single-branch https://github.com/tty228/luci-app-servercha
 git clone -b master --single-branch https://github.com/fw876/helloworld ./package/hw
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
-#git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
-#find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
-#find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
+svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/luci-app-bypass
 
-#sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
-#sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
 ./scripts/feeds update -i
