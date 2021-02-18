@@ -66,7 +66,7 @@ git clone -b master --single-branch https://github.com/tty228/luci-app-servercha
 git clone -b master --single-branch https://github.com/fw876/helloworld ./package/hw
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
-svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/luci-app-bypass
+svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/diy/luci-app-bypass
 
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
