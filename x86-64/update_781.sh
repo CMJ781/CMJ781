@@ -59,6 +59,12 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 # 删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
+# 取消 bootstrap 为默认主题
+#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+
+# 修改 argon 为默认主题，可根据你喜欢的修改成其他的（不选择那些会自动改变为默认主题的主题才有效果）
+#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
@@ -66,7 +72,7 @@ git clone -b master --single-branch https://github.com/tty228/luci-app-servercha
 git clone -b master --single-branch https://github.com/fw876/helloworld ./package/hw
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
-svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/diy/luci-app-bypass
+#svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/diy/luci-app-bypass
 
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
