@@ -73,6 +73,10 @@ git clone -b master --single-branch https://github.com/fw876/helloworld ./packag
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
 #svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/diy/luci-app-bypass
+git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
+svn co https://github.com/garypang13/openwrt-packages/trunk/lua-maxminddb
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
