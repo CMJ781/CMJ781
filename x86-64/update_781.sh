@@ -74,9 +74,8 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 
 #svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/diy/luci-app-bypass
 git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
-svn co https://github.com/garypang13/openwrt-packages/trunk/lua-maxminddb
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
+sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' */Makefile
+sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' */Makefile
 
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
