@@ -1,9 +1,11 @@
 #!/bin/bash
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
+rm -rf ./package/lean/luci-theme-argon
 rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
+rm -rf ./package/lean/luci-theme-opentomcat
 
 # echo '替换aria2'
 rm -rf feeds/luci/applications/luci-app-aria2 && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
@@ -18,6 +20,10 @@ sed -i 's/+qbittorrent/+qbittorrent +python3/g' ./package/lean/luci-app-qbittorr
 rm -rf package/lean/luci-app-qbittorrent
 rm -rf package/lean/qt5
 rm -rf package/lean/qBittorrent
+rm -rf ../lean/luci-app-docker
+rm -rf ../lean/luci-app-dockerman
+rm -rf ../lean/luci-lib-docker
+rm -rf package/lean/luci-app-jd-dailybonus
 
 echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns&& svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
@@ -25,9 +31,12 @@ rm -rf ./package/lean/luci-app-netdata && svn co https://github.com/sirpdboy/sir
 rm -rf ./feeds/packages/admin/netdata && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata ./feeds/packages/admin/netdata
 rm -rf ./feeds/packages/net/mwan3 && svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 rm -rf ./feeds/packages/net/https-dns-proxy  && svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
-
+#rm -rf ./package/diy/autocore
+#rm -rf ./package/diy/default-settings
 rm -rf ./package/lean/automount
 rm -rf ./package/lean/autosamba
+#rm -rf ./package/diy/luci-app-cpufreq
+rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
@@ -72,10 +81,14 @@ git clone -b master --single-branch https://github.com/tty228/luci-app-servercha
 git clone -b master --single-branch https://github.com/fw876/helloworld ./package/hw
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 
-#svn co https://github.com/CMJ781/CMJ781-OP/trunk/luci-app-bypass package/diy/luci-app-bypass
-git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
-sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' */Makefile
-sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' */Makefile
+git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
+git clone https://github.com/garypang13/luci-app-dnsfilter.git package/luci-app-dnsfilter
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
+
+# Add driver for rtl8821cu & rtl8812au-ac
+svn co https://github.com/project-openwrt/openwrt/branches/master/package/ctcgfw/rtl8812au-ac ./package/ctcgfw
+svn co https://github.com/project-openwrt/openwrt/branches/master/package/ctcgfw/rtl8821cu ./package/ctcgfw
 
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
