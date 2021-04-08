@@ -1,0 +1,22 @@
+#!name=CMJ782-Rewrite
+#!desc=京东&淘宝比价,Netflix评分,更改搜索
+
+[General]
+
+[Host]
+
+[Script]
+# 变更AQI-CN为AQI-US
+http-response ^https://weather-data.apple.com/v1/weather/[\w-]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+\? requires-body=1,script-path=https://raw.githubusercontent.com/CMJ781/CMJ781/master/Weather-AQI.js
+
+# 京东历史价格
+http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
+
+# 淘宝历史价格
+http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js
+http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js
+
+[Header Rewrite]
+
+[MITM]
+hostname = %INSERT% -newclient.map.baidu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, duckduckgo.com, weather-data.apple.com
