@@ -2,14 +2,19 @@
 DOMAIN-SUFFIX,canada-goose.com
 DOMAIN-SUFFIX,furla.com
 DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,velo.helpshift.com
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,trusteer.com
 
-DOMAIN-KEYWORD,eastwestbank
-DOMAIN-KEYWORD,velobank
 DOMAIN-KEYWORD,voice
 
 USER-AGENT,com.google.GVDiale*
 USER-AGENT,VoiceAp*
 USER-AGENT,*WeatherFoundation*
+
+# velo bank
+USER-AGENT,velo*
+DOMAIN-KEYWORD,velobank
+DOMAIN-KEYWORD,eastwestbank
+DOMAIN-SUFFIX,omtrdc.net
+DOMAIN-SUFFIX,assureid.net
+DOMAIN-SUFFIX,velo.helpshift.com
