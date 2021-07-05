@@ -50,6 +50,9 @@ localhost = 127.0.0.1
 *github* = server:8.8.4.4
 
 [Rule]
+# Forced fallback HTTP2/HTTP1.1
+AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
+
 # 知乎直播修正
 URL-REGEX,^https?:\/\/api\.zhihu\.com\/drama\/,DIRECT
 
